@@ -777,3 +777,9 @@ Con pandas, en el Módulo 7, las mismas ocho líneas serán `lecturas.mean()` y 
 - Tipos integrados: [docs.python.org/es/3/library/stdtypes.html](https://docs.python.org/es/3/library/stdtypes.html)
 - Minilenguaje de formato: [docs.python.org/es/3/library/string.html#formatspec](https://docs.python.org/es/3/library/string.html#formatspec)
 - Control de flujo en el tutorial oficial: [docs.python.org/es/3/tutorial/controlflow.html](https://docs.python.org/es/3/tutorial/controlflow.html)
+
+
+
+# USO DE IA:
+ 
+He usado la IA para solucionar un par de errores que me han salido al obtener el nombre del tipo de la variable (estaba haciendo type(valor) y no type(valor).__name__). Tambien para buscar los tramos del IRPF 
