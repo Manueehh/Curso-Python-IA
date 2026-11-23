@@ -85,3 +85,6 @@ Los `import` no están escritos: decide tú qué importar y cómo. Antes de escr
 1. Añade un doctest más a tres funciones y ejecútalos con `python -m doctest`.
 2. Escribe `memorizar(funcion)`: devuelve una versión de `funcion` que guarda en un diccionario los resultados ya calculados y no vuelve a calcularlos. Es un cierre con estado.
 3. Reescribe `aplicar` usando la función integrada `map()` y compara las dos versiones.
+
+## USO DE IA
+Ninguno, las dudas fueron consultadas mediante foros como StackOverflow
