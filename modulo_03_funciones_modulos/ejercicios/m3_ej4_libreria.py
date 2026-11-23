@@ -3,7 +3,7 @@
 import math
 import random
 from collections import Counter
-from datetime import date
+from datetime import date, datetime
 from pathlib import Path
 
 
@@ -13,7 +13,8 @@ def hipotenusa(cateto_a: float, cateto_b: float) -> float:
     >>> hipotenusa(3, 4)
     5.0
     """
-    raise NotImplementedError
+    suma = math.pow(cateto_a,2) + math.pow(cateto_b,2)
+    return round(math.sqrt(suma),2)
 
 
 def dias_entre(fecha_inicio: str, fecha_fin: str) -> int:
@@ -24,7 +25,9 @@ def dias_entre(fecha_inicio: str, fecha_fin: str) -> int:
     >>> dias_entre("2026-11-19", "2026-11-27")
     8
     """
-    raise NotImplementedError
+    fecha_i = date.fromisoformat(fecha_inicio)
+    fecha_d = date.fromisoformat(fecha_fin)
+    return abs((fecha_i-fecha_d).days)
 
 
 def es_fin_de_semana(fecha_iso: str) -> bool:
@@ -35,7 +38,8 @@ def es_fin_de_semana(fecha_iso: str) -> bool:
     >>> es_fin_de_semana("2026-11-23")
     False
     """
-    raise NotImplementedError
+    fecha = date.fromisoformat(fecha_iso)
+    return fecha.isoweekday() >= 6
 
 
 def extension(ruta: str) -> str:
@@ -48,7 +52,7 @@ def extension(ruta: str) -> str:
     >>> extension("LEEME")
     ''
     """
-    raise NotImplementedError
+    return Path(ruta).suffix.lower().lstrip(".")
 
 
 def palabra_mas_frecuente(texto: str) -> str | None:
@@ -60,7 +64,12 @@ def palabra_mas_frecuente(texto: str) -> str | None:
     >>> palabra_mas_frecuente("el gato y el perro")
     'el'
     """
-    raise NotImplementedError
+    if len(texto.strip()) > 0:
+        split_texto = texto.lower().split()
+        palabras = Counter(split_texto)
+        ocurrencias_max = palabras.most_common(1)[0][0]
+        return ocurrencias_max
+    return None
 
 
 def tirar_dados(cantidad: int, caras: int = 6, semilla: int | None = None) -> list[int]:
@@ -73,4 +82,11 @@ def tirar_dados(cantidad: int, caras: int = 6, semilla: int | None = None) -> li
     >>> len(tirar_dados(3))
     3
     """
-    raise NotImplementedError
+    dados = []
+    generador = random.Random()
+    if semilla is not None:
+        generador = random.Random(semilla)
+    for i in range(cantidad):
+        cara = generador.randint(1,caras)
+        dados.append(cara)
+    return dados

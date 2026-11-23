@@ -11,7 +11,7 @@ def esta_vacio(texto: str | None) -> bool:
     >>> esta_vacio(" a ")
     False
     """
-    raise NotImplementedError
+    return texto is None or not texto.strip()
 
 
 def normalizar_nombre(nombre: str) -> str:
@@ -20,7 +20,9 @@ def normalizar_nombre(nombre: str) -> str:
     >>> normalizar_nombre("  ada   LOVELACE ")
     'Ada Lovelace'
     """
-    raise NotImplementedError
+    texto = nombre.strip()
+    texto = " ".join(texto.split())
+    return texto.title()
 
 
 def es_email(texto: str) -> bool:
@@ -35,7 +37,13 @@ def es_email(texto: str) -> bool:
     >>> es_email("ada@ejemplo")
     False
     """
-    raise NotImplementedError
+    arrobas = texto.count("@")
+    if arrobas != 1 or " " in texto:
+        return False
+    usuario, dominio = texto.split("@")
+    if not usuario:
+        return False
+    return "." in dominio[1:-1]
 
 
 def es_dni(texto: str) -> bool:
@@ -50,4 +58,12 @@ def es_dni(texto: str) -> bool:
     >>> es_dni("12345678A")
     False
     """
-    raise NotImplementedError
+    texto = texto.strip().upper()
+    if len(texto) != 9:
+        return False
+    letra = texto[8]
+    numeros = texto[:8]
+    if not (numeros.isascii() and numeros.isdigit()):
+        return False
+    division = int(numeros) % 23
+    return LETRAS_DNI[division] == letra

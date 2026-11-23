@@ -13,8 +13,9 @@ def area_circulo(radio: float) -> float:
     >>> area_circulo(1)
     3.14
     """
-    raise NotImplementedError
-
+    if radio is not None:
+        return round(math.pi*math.pow(radio,2),2)
+    return None
 
 def area_rectangulo(base: float, altura: float) -> float:
     """Devuelve el área de un rectángulo.
@@ -22,8 +23,9 @@ def area_rectangulo(base: float, altura: float) -> float:
     >>> area_rectangulo(3, 4)
     12
     """
-    raise NotImplementedError
-
+    if base is not None and altura is not None:
+        return round(base*altura,2)
+    return None
 
 def area_triangulo(base: float, altura: float) -> float:
     """Devuelve el área de un triángulo.
@@ -31,8 +33,9 @@ def area_triangulo(base: float, altura: float) -> float:
     >>> area_triangulo(3, 4)
     6.0
     """
-    raise NotImplementedError
-
+    if base is not None and altura is not None:
+        return round((base*altura) / 2,2)
+    return None
 
 def calcular_area(figura: str, *, radio=None, base=None, altura=None):
     """Calcula el área de la figura indicada usando las funciones anteriores.
@@ -48,8 +51,12 @@ def calcular_area(figura: str, *, radio=None, base=None, altura=None):
     >>> calcular_area("triangulo", base=3) is None
     True
     """
-    raise NotImplementedError
-
+    if figura.upper() == "CIRCULO":
+        return area_circulo(radio)
+    if figura.upper() == "RECTANGULO":
+        return area_rectangulo(base,altura)
+    if figura.upper() == "TRIANGULO":
+        return area_triangulo(base,altura)
 
 def minimo_y_maximo(*numeros):
     """Devuelve una tupla (mínimo, máximo) con los números recibidos.
@@ -61,8 +68,9 @@ def minimo_y_maximo(*numeros):
     >>> minimo_y_maximo()
     (None, None)
     """
-    raise NotImplementedError
-
+    if not numeros:
+        return None,None
+    return min(numeros), max(numeros)
 
 def describir(funcion) -> str:
     """Devuelve "nombre: primera línea del docstring" de la función recibida.
@@ -72,4 +80,9 @@ def describir(funcion) -> str:
     >>> describir(area_rectangulo)
     'area_rectangulo: Devuelve el área de un rectángulo.'
     """
-    raise NotImplementedError
+    docstring = (funcion.__doc__ or "").strip()
+
+    if not docstring:
+        return f"{funcion.__name__}: sin documentar"
+    primera_linea = docstring.splitlines()[0]
+    return f"{funcion.__name__}: {primera_linea}"

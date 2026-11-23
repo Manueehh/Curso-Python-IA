@@ -11,7 +11,11 @@ def crear_contador(inicio: int = 0):
     >>> contador(), contador(), contador()
     (1, 2, 3)
     """
-    raise NotImplementedError
+    def siguiente():
+        nonlocal inicio
+        inicio += 1
+        return inicio
+    return siguiente
 
 
 def multiplicador(factor: float):
@@ -21,7 +25,9 @@ def multiplicador(factor: float):
     >>> triple(10)
     30
     """
-    raise NotImplementedError
+    def multiplicar(numero):
+        return numero * factor
+    return multiplicar
     # También vale: return lambda numero: numero * factor
 
 
@@ -33,7 +39,10 @@ def aplicar(funcion, valores: list) -> list:
     >>> aplicar(abs, [-1, 2, -3])
     [1, 2, 3]
     """
-    raise NotImplementedError
+    valores_aplicados = []
+    for valor in valores:
+        valores_aplicados.append(funcion(valor))
+    return valores_aplicados
     # En el módulo 4 veremos la forma idiomática: [funcion(valor) for valor in valores]
 
 
@@ -44,7 +53,9 @@ def componer(f, g):
     >>> incrementar_y_duplicar(5)
     12
     """
-    raise NotImplementedError
+    def compuesta(x):
+        return f(g(x))
+    return compuesta
 
 
 def ordenar_por_longitud(palabras: list[str]) -> list[str]:
@@ -55,7 +66,8 @@ def ordenar_por_longitud(palabras: list[str]) -> list[str]:
     >>> ordenar_por_longitud(["manzana", "uva", "kiwi"])
     ['uva', 'kiwi', 'manzana']
     """
-    raise NotImplementedError
+    ordenadas = sorted(palabras,key=len)
+    return ordenadas
 
 
 def mas_caro(productos: list[tuple]) -> tuple | None:
@@ -66,4 +78,7 @@ def mas_caro(productos: list[tuple]) -> tuple | None:
     >>> mas_caro([("teclado", 45.0), ("monitor", 189.0), ("raton", 19.9)])
     ('monitor', 189.0)
     """
-    raise NotImplementedError
+    return max(productos, key=precio,default=None)
+
+def precio(producto: tuple) -> float:
+    return producto[1]
