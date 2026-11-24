@@ -14,7 +14,8 @@ def es_palindromo(texto: str) -> bool:
     >>> es_palindromo("Python")
     False
     """
-    raise NotImplementedError
+    limpio = "".join(caracter.lower() for caracter in texto if caracter.isalnum())
+    return limpio == limpio[::-1]
 
 
 def contar_vocales(texto: str) -> int:
@@ -23,8 +24,12 @@ def contar_vocales(texto: str) -> int:
     >>> contar_vocales("Programación")
     5
     """
-    raise NotImplementedError
-
+    contador = 0
+    if len(texto) > 0:
+        for i in range(len(texto)):
+            if texto[i].lower() in VOCALES:
+                contador += 1
+    return contador
 
 def invertir_palabras(frase: str) -> str:
     """Devuelve la frase con las palabras en orden inverso y un solo espacio entre ellas.
@@ -32,7 +37,13 @@ def invertir_palabras(frase: str) -> str:
     >>> invertir_palabras("  hola   mundo cruel ")
     'cruel mundo hola'
     """
-    raise NotImplementedError
+    frase_reves = ""
+    for palabra in frase.split():
+        if frase_reves:
+            frase_reves = palabra + " " + frase_reves
+        else:
+            frase_reves = palabra
+    return frase_reves
 
 
 def a_snake_case(texto: str) -> str:
@@ -43,7 +54,7 @@ def a_snake_case(texto: str) -> str:
     >>> a_snake_case("  codigo-postal ")
     'codigo_postal'
     """
-    raise NotImplementedError
+    return "_".join(texto.replace("-", " ").lower().split())
 
 
 def enmascarar(numero: str, visibles: int = 4) -> str:
@@ -56,7 +67,10 @@ def enmascarar(numero: str, visibles: int = 4) -> str:
     >>> enmascarar("123")
     '123'
     """
-    raise NotImplementedError
+    if len(numero) <= visibles:
+        return numero
+    ocultos = len(numero) - visibles
+    return "*" * ocultos + numero[ocultos:]
     # Cuidado con numero[-visibles:]: si visibles es 0, numero[-0:] es la cadena entera
 
 
@@ -68,8 +82,7 @@ def son_anagramas(a: str, b: str) -> bool:
     >>> son_anagramas("Roma", "amor")
     True
     """
-    raise NotImplementedError
-
+    return sorted(a.lower().replace(" ", "")) == sorted(b.lower().replace(" ", ""))
 
 def parsear_configuracion(texto: str) -> dict[str, str]:
     """Convierte un texto ``clave=valor;clave=valor`` en un diccionario.
@@ -81,7 +94,12 @@ def parsear_configuracion(texto: str) -> dict[str, str]:
     >>> parsear_configuracion("host = localhost; puerto=8080;; modo=debug")
     {'host': 'localhost', 'puerto': '8080', 'modo': 'debug'}
     """
-    raise NotImplementedError
+    configuracion = {}
+    for fragmento in texto.split(";"):
+        clave, igual, valor = fragmento.partition("=")
+        if igual:
+            configuracion[clave.strip()] = valor.strip()
+    return configuracion
 
 
 def formatear_tabla(filas: list[tuple[str, float]]) -> str:
@@ -95,4 +113,5 @@ def formatear_tabla(filas: list[tuple[str, float]]) -> str:
     teclado          45.00
     monitor         189.50
     """
-    raise NotImplementedError
+
+    return "\n".join(f"{nombre:<12}{importe:>10.2f}" for nombre, importe in filas)

@@ -119,3 +119,7 @@ Todas las funciones reciben una lista de diccionarios como la del comentario ini
 1. Reescribe `contar_palabras` con `collections.Counter` y `agrupar_por` con `defaultdict`.
 2. Escribe `ordenar_por_varios(registros, campos)`, que ordena por una lista de campos. Pista: `operator.itemgetter(*campos)`.
 3. Vuelve a `calcular_irpf` de la Práctica 2 y reescríbela con una lista de tuplas `(limite, tipo)` y un bucle, de forma que añadir un tramo no obligue a tocar el código.
+
+
+## USO DE IA EN ESTE BLOQUE
+Especialmente para los ejercicios de comprensiones, era algo que no habia visto mucho quitando algunas cosas sueltas, y me ha ayudado a comprenderlas bien (habia desarrollado el codigo sin compresion pero los tests me fallaban, y ahi es cuando ha intervenido la IA)
