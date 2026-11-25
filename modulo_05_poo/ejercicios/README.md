@@ -124,3 +124,6 @@ LineaPedido(producto='Ratón', unidades=1, precio=19.9)
 2. Escribe un `Protocol` llamado `Exportador` para el Ejercicio 4 y anota con él las funciones.
 3. Convierte `Rectangulo` en una dataclass. ¿Qué código desaparece?
 4. Añade a `CuentaBancaria` un método de clase `desde_movimientos(titular, movimientos)` que cree la cuenta y aplique la lista de importes.
+
+## USO DE IA EN ESTE MODULO
+Dado el corto tiempo para realizar el modulo, he usado más de la que me hubiese gustado en la parte de la biblioteca, y para entender mejor algunos conceptos en la parte de encapsulacion
