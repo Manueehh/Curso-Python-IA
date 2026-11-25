@@ -12,7 +12,12 @@ def contar_lineas(ruta) -> int:
 
     Tiene que recorrer el fichero línea a línea, sin cargarlo entero en memoria.
     """
-    raise NotImplementedError
+    contador = 0
+    with open(ruta,encoding="utf-8") as file:
+        for numero, linea in enumerate(file, start=1):
+            contador += 1
+    return contador
+
 
 
 def leer_lineas_utiles(ruta) -> list[str]:
@@ -20,7 +25,13 @@ def leer_lineas_utiles(ruta) -> list[str]:
 
     Descarta las líneas vacías y las que empiezan por ``#``.
     """
-    raise NotImplementedError
+    lineas_utiles = []
+    with open(ruta,encoding="utf-8") as file:
+        for numero, linea in enumerate(file, start=1):
+            if not linea.strip().startswith("#") and len(linea.strip()) > 0:
+                lineas_utiles.append(linea.strip())
+    print(lineas_utiles)
+    return lineas_utiles
 
 
 def escribir_lineas(ruta, lineas: list[str]) -> None:
@@ -29,7 +40,11 @@ def escribir_lineas(ruta, lineas: list[str]) -> None:
     Si el fichero existe, se sustituye su contenido. Si la carpeta no existe,
     se crea. Cada línea, incluida la última, termina en salto de línea.
     """
-    raise NotImplementedError
+    ruta = Path(ruta)
+    ruta.parent.mkdir(parents=True, exist_ok=True)
+    with open(ruta,"w",encoding="utf-8") as file:
+        for linea in lineas:
+            file.write(linea + "\n")
 
 
 def anadir_linea(ruta, linea: str) -> None:
@@ -37,7 +52,9 @@ def anadir_linea(ruta, linea: str) -> None:
 
     Si el fichero no existe, lo crea.
     """
-    raise NotImplementedError
+    with open(ruta,"a",encoding="utf-8") as fichero:
+        fichero.write(linea + "\n")
+
 
 
 def buscar(ruta, texto: str) -> list[tuple[int, str]]:
@@ -46,7 +63,12 @@ def buscar(ruta, texto: str) -> list[tuple[int, str]]:
     Cada resultado es una tupla (número de línea, línea sin el salto final).
     La primera línea del fichero es la 1.
     """
-    raise NotImplementedError
+    lineas = []
+    with open(ruta,encoding="utf-8") as fichero:
+        for numero, linea in enumerate(fichero.read().splitlines(),start=1):
+            if texto.strip().upper() in linea.strip().upper():
+                lineas.append((numero,linea))
+    return lineas
 
 
 def numerar(origen, destino) -> int:
@@ -55,7 +77,13 @@ def numerar(origen, destino) -> int:
     El formato de cada línea es "  1: texto", con el número alineado a la
     derecha en tres caracteres. Devuelve el número de líneas copiadas.
     """
-    raise NotImplementedError
+    total = 0
+    with open(origen, encoding="utf-8") as entrada:
+        with open(destino, "w", encoding="utf-8") as salida:
+            for numero, linea in enumerate(entrada, start=1):
+                salida.write(f"{numero:>3}: {linea}")
+                total = numero
+    return total
 
 
 def ficheros_por_extension(carpeta, extension: str) -> list[str]:
@@ -66,4 +94,4 @@ def ficheros_por_extension(carpeta, extension: str) -> list[str]:
     >>> ficheros_por_extension(".", "no_existe")
     []
     """
-    raise NotImplementedError
+    return sorted(ruta.name for ruta in Path(carpeta).glob(f"*.{extension}") if ruta.is_file())
