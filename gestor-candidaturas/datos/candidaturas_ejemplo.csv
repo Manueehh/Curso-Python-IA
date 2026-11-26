@@ -1,0 +1,13 @@
+id,empresa,puesto,fuente,interes,estado,fecha_envio,fecha_respuesta,fecha_cierre,modalidad,salario,ubicacion,enlace,notas
+1,Acme Analytics,Data Analyst,linkedin,alto,entrevista,2026-10-20,2026-10-27,,hibrido,32000,Madrid,https://ejemplo.com/ofertas/1,Entrevista con el equipo de BI
+2,Banco Ibérico,Data Engineer,web_empresa,alto,prueba_tecnica,2026-10-22,2026-10-30,,presencial,36000,Madrid,,Prueba técnica de SQL y Spark
+3,Nimbus Cloud,ML Engineer Junior,linkedin,medio,enviada,2026-10-25,,,remoto,34000,,https://ejemplo.com/ofertas/3,
+4,Retail Plus,Analista BI,infojobs,bajo,rechazada,2026-10-26,2026-11-03,2026-11-03,presencial,26000,Getafe,,
+5,Datanova,Data Scientist,referido,alto,oferta,2026-10-28,2026-11-02,,hibrido,38000,Madrid,,Me lo pasó un compañero de la carrera
+6,Logística Sur,Analista de datos,infojobs,medio,enviada,2026-11-02,,,presencial,,Ciudad Real,,
+7,FinTech Hub,Data Engineer Junior,linkedin,medio,rechazada,2026-11-03,2026-11-10,2026-11-10,remoto,30000,,,
+8,Seguros Centro,Analista de riesgos,web_empresa,medio,enviada,2026-11-05,,,hibrido,,Madrid,,
+9,Media Group,Data Analyst,infojobs,bajo,descartada,2026-11-06,,2026-11-12,presencial,24000,Barcelona,,No quiero mudarme a Barcelona
+10,Consultora Delta,Consultor Big Data,referido,medio,entrevista,2026-11-10,2026-11-14,,hibrido,33000,Madrid,,
+11,Energía Verde,Analista de datos,linkedin,alto,enviada,2026-11-18,,,remoto,,,https://ejemplo.com/ofertas/11,
+12,Startup Lumen,Python Developer,otra,bajo,enviada,2026-11-20,,,,,,,
