@@ -1,0 +1,21 @@
+id,empresa,puesto,fuente,interes,estado,fecha_envio,fecha_respuesta,fecha_cierre,modalidad,salario,ubicacion,enlace,notas
+1,BNP Paribas Personal Finance,Junior Data Engineer,otra,alto,entrevista,2026-10-20,2026-10-28,,,,Madrid,https://www.jobijoba.es/oferta-empleo/69/1a5c736b63f95beebbfe41243fa009d7,Equipo South Europe Technologies (S.ET)
+2,Multiverse Computing,Machine Learning Engineer (Service),web_empresa,alto,prueba_tecnica,2026-10-21,2026-10-30,,hibrido,55000,Madrid,https://multiversecomputing.teamtailor.com/jobs/6601327-machine-learning-engineer-service-fixed-term-contract,"Contrato temporal; IA generativa. Sedes Madrid, Barcelona y Zaragoza"
+3,Aubay,Data Analyst Credit Risk,infojobs,alto,entrevista,2026-10-22,2026-11-03,,,,Alcobendas,,Vista en InfoJobs como oferta similar. Riesgo de crédito: encaja con el TFG
+4,Devoteam Spain,Junior Data AWS Engineer / AI Engineer,otra,alto,oferta,2026-10-23,2026-10-29,,hibrido,,Madrid,https://es.jooble.org/jdp/-1576351061908444981,Datos + IA sobre AWS
+5,EY wavespace,Junior Data Scientist,otra,alto,enviada,2026-10-27,,,,,Madrid,https://wearedevelopers.com/jobs/ext/2778260-junior-data-scientist-madrid-ai-ml-for-innovative-solutions,"NLP, visión artificial, Azure; piden 1-2 años"
+6,Solera Holdings,Machine Learning Engineer,otra,alto,enviada,2026-10-30,,,,,Madrid,https://www.wearedevelopers.com/en/jobs/ext/5753784/machine-learning-engineer,"Spark, PyTorch, scikit-learn, MLOps; inglés"
+7,Driblab,Machine Learning Engineer (Junior),web_empresa,alto,rechazada,2026-10-24,2026-11-06,2026-11-06,presencial,,Madrid,https://www.driblab.com/blog/job-opening-machine-learning-engineer-junior,Datos de fútbol; oficina junto a Puerta de Toledo
+8,Logicalis Spain,Data Engineer DataStage Junior,otra,medio,enviada,2026-11-02,,,,,Madrid,https://es.jooble.org/jdp/1710105080659601726,
+9,TIGLOO,Data Engineer Junior,otra,medio,entrevista,2026-11-03,2026-11-10,,,,Madrid,https://es.jooble.org/jdp/-8477969223382551997,Contrato fijo a tiempo completo
+10,Tecdata Engineering,"Analista de Datos Junior (Python, AWS)",otra,medio,enviada,2026-11-04,,,hibrido,,Madrid,https://es.indeed.com/cmp/Tecdata-Engineering/salaries/Analista+Python,
+11,Ufinet (vía Candee),Junior Data Analyst,otra,medio,rechazada,2026-11-05,2026-11-14,2026-11-14,hibrido,,Madrid,https://es.jooble.org/jdp/463557607682499825,Proceso gestionado por Candee
+12,SDG Group,Junior Data Analyst,otra,medio,enviada,2026-11-06,,,hibrido,,Madrid,,Vista en el listado de Indeed. SQL y Power BI; piden 1 año
+13,Sabina Divosi (headhunter),Junior Data Engineer | BI & Data,otra,medio,prueba_tecnica,2026-11-07,2026-11-12,,hibrido,,Aravaca,https://es.jooble.org/jdp/-508446847100804694,Cliente sin nombre; piden 2 años
+14,Accumin Intelligence,Junior Data Scientist,otra,medio,enviada,2026-11-10,,,hibrido,,Madrid,https://es.jooble.org/jdp/7640600430975609028,"Contrato fijo, horario flexible"
+15,Experis IT,"Data Engineer Python (AWS, PySpark, GenAI)",infojobs,medio,enviada,2026-11-12,,,hibrido,,Madrid,,Vista en InfoJobs como oferta similar. PySpark: aprovechar experiencia de Minsait
+16,BIP,Junior AI Engineer (Google Tech Hub),otra,medio,enviada,2026-11-14,,,remoto,,Madrid,https://platform-v2.wearedevelopers.com/en/jobs/ext/5745374/google-ai-engineer-martech,"GCP, BigQuery, martech"
+17,Transilvania HR (cliente),Junior/Mid AI Engineer,otra,medio,enviada,2026-11-17,,,hibrido,,Madrid,https://www.careers-page.com/transilvaniahr/job/W336V95W,
+18,FERO,Junior Data Analyst,otra,bajo,descartada,2026-11-11,,2026-11-19,hibrido,,Madrid,https://www.studentjob.es/ofertas/6648926-junior-data-analyst,Startup SaaS; más negocio que datos
+19,Chemo,Junior / Graduate Data Analyst,otra,bajo,enviada,2026-11-20,,,,,Madrid,https://www.studentjob.es/ofertas/7376343-junior-graduate-data-analyst,Área de Business Development; recién titulados
+20,TAPTAP Digital,Intern - Junior Data & AI Engineer,otra,bajo,enviada,2026-11-24,,,,,Madrid,,Vista en Jooble como oferta similar. Son prácticas
